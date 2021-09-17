@@ -5,29 +5,30 @@
     <title>Add User</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
     <header>
         <h1>Add User</h1>
     </header>
-    <form method="post" action="/user">
+    <form method="post" th:action="@{/user}">
         <div class="form-group">
             <label>Username
-                <input type="text" name="username" class="form-control">
-            </label>
-        </div><br>
-        <div class="form-group">
+                <input type="text" name="username" th:value=${username} class="form-control">
+            </label><br>
+            <label>E-Mail
+                <input type="email" name="email" th:value=${email} class="form-control">
+            </label><br>
             <label>Password
                 <input type="password" name="password" class="form-control">
-            </label>
-        </div><br>
-        <div class="form-group">
-            <label>E-Mail
-                <input type="email" name="email" class="form-control">
-            </label>
-        </div><br>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-success">
+            </label><br>
+            <label>Verify Password
+                <input type="password" name="verify" class="form-control">
+            </label><br>
+
+            <p th:text="${error}" class="errorMsg"></p>
+
+            <input type="submit" value="Sign Up" class="btn btn-success">
         </div>
     </form>
 

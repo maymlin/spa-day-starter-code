@@ -24,3 +24,9 @@ table {
             padding: 10px;
             text-align: center;
 }
+
+.errorMsg {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}

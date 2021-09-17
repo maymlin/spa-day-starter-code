@@ -7,10 +7,16 @@ public class User {
     private String email;
     private String password;
 
-    public User(String username, String email, String password) {
-
+    public User() {
         this.id = nextId;
         nextId++;
+    }
+
+    public User(String username, String email, String password) {
+        this();
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
     public int getId() {
