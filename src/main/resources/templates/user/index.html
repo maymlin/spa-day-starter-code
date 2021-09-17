@@ -2,13 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
     <title>Welcome</title>
 </head>
-<body>
-    <p th:text="'Welecome ' + ${user.username} + '!'"></p>
+<body class="container">
+    <nav th:replace="fragments :: header"></nav>
+    <header>
+        <h1>All Users</h1>
+    </header>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>User Details Page</th>
+            </tr>
+        </thead>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td><a th:href="@{/user/userdetail/{id}(id=${user.id})}">User Details</a></td>
+        </tr>
+    </table>
+    <!--
+    <h1 th:text="'Welecome ' + ${user.username} + '!'"></h1>
+    <p th:text="'Joined date: ' + ${user.joinedDate}"></p>
     <a th:href="@{/}">
         Select your spa services here
     </a>
+    -->
 </body>
 </html>

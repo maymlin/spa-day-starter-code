@@ -6,6 +6,13 @@
     <title>Fragments</title>
 </head>
 <body>
+    <nav th:fragment="header">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Service Selection</a></li>
+            <li class="nav-item"><a class="nav-link" href="/user/add">Add User</a></li>
+        </ul>
+    </nav>
+
         <p th:fragment = "manicureDescription">Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
         <p th:fragment = "pedicureDescription">Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
 </body>
