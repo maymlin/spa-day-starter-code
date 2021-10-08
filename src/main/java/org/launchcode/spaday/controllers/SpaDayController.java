@@ -25,30 +25,13 @@ public class SpaDayController {
     }
 
     @GetMapping(value="")
-    @ResponseBody
+//    @ResponseBody     // 10/7/21 Lin commented out
     public String customerForm () {
-        String html = "<form method = 'post'>" +
-                "Name: <br>" +
-                "<input type = 'text' name = 'name'>" +
-                "<br>Skin type: <br>" +
-                "<select name = 'skintype'>" +
-                "<option value = 'oily'>Oily</option>" +
-                "<option value = 'combination'>Combination</option>" +
-                "<option value = 'normal'>Normal</option>" +
-                "<option value = 'dry'>Dry</option>" +
-                "</select><br>" +
-                "Manicure or Pedicure? <br>" +
-                "<select name = 'manipedi'>" +
-                "<option value = 'manicure'>Manicure</option>" +
-                "<option value = 'pedicure'>Pedicure</option>" +
-                "<option value = 'both'>Both</option>" +
-                "</select><br>" +
-                "<input type = 'submit' value = 'Submit'>" +
-                "</form>";
-        return html;
+
+        return "index";
     }
 
-    @PostMapping(value="")
+    @PostMapping(value="menu")
     public String spaMenu(@RequestParam String name, @RequestParam String skintype, @RequestParam String manipedi, Model model) {
 
         ArrayList<String> facials = new ArrayList<>();
