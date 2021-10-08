@@ -50,7 +50,7 @@ public class SpaDayController {
         model.addAttribute("name", name);           // 9/15/21 Lin added
         model.addAttribute("skintype", skintype);   // 9/15/21 Lin added
         model.addAttribute("manipedi", manipedi);   // 9/15/21 Lin added
-        model.addAttribute("appropriateFacials", appropriateFacials); // 9/15/21 Lin added
+        model.addAttribute("appropriateFacials", appropgriateFacials); // 9/15/21 Lin added
 
         return "menu";
     }
