@@ -17,12 +17,6 @@ public class UserController {
 
     @PostMapping
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
-        model.addAttribute("user", user);
-        model.addAttribute("verify", verify);
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("email", user.getEmail());
-
-
         if (user.getPassword().equals(verify)) {
             UserData.add(user);
             return "user/index";
@@ -32,7 +26,6 @@ public class UserController {
         return "user/add";
     }
 
-//    @GetMapping("index")
     @GetMapping
     public String displayAllUsers(Model model) {
         model.addAttribute("users", UserData.getAll());
