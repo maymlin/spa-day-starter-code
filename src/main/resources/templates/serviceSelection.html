@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Select Your Spa Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
-<body>
+<body class="container">
     <nav th:replace="fragments :: header"></nav>
     <form method = 'post'>
 
@@ -18,6 +20,7 @@
                 <option value = 'dry'>Dry</option>
             </select>
         </label>
+        <br>
         <label>
             Manicure or Pedicure?
             <select name = 'manipedi'>
@@ -25,6 +28,7 @@
                 <option value = 'pedicure'>Pedicure</option>
             </select>
         </label>
+        <br>
         <input type = 'submit' value = 'Submit'>
     </form>
 </body>

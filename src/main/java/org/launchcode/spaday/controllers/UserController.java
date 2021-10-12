@@ -22,15 +22,18 @@ public class UserController {
         model.addAttribute("username", user.getUsername());
         model.addAttribute("email", user.getEmail());
 
+
         if (user.getPassword().equals(verify)) {
             UserData.add(user);
+            return "user/index";
         } else {
             model.addAttribute("error", "Passowrds do not match");
         }
-        return "redirect:/user/add";
+        return "user/add";
     }
 
-    @GetMapping("index")
+//    @GetMapping("index")
+    @GetMapping
     public String displayAllUsers(Model model) {
         model.addAttribute("users", UserData.getAll());
         return "user/index";

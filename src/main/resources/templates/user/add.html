@@ -15,21 +15,21 @@
     <form method="post" th:action="@{/user}">
         <div class="form-group">
             <label>Username
-                <input type="text" name="username" th:value=${username} class="form-control">
+                <input type="text" name="username" th:value="${username}" class="form-control" />
             </label><br>
             <label>E-Mail
-                <input type="email" name="email" th:value=${email} class="form-control">
+                <input type="email" name="email" th:value="${email}" class="form-control" />
             </label><br>
             <label>Password
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" th:value="${password}"class="form-control" />
             </label><br>
             <label>Verify Password
-                <input type="password" name="verify" class="form-control">
+                <input type="password" name="verify" class="form-control" />
             </label><br>
 
             <p th:text="${error}" class="errorMsg"></p>
 
-            <input type="submit" value="Sign Up" class="btn btn-success">
+            <input type="submit" value="Sign Up" class="btn btn-success" />
         </div>
     </form>
 
